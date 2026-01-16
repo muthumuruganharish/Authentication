@@ -9,6 +9,11 @@ const app=express()
 app.use(cors());
 app.use(express.json())
 
+//routes...
+const AuthRoute=require("./Routes/Auth")
+app.use("./api",AuthRoute) // now the link becomes POST http://localhost:5000/api/signup
+
+
 app.get("/",(req,res)=>{
     res.send("server is running.....")
 })
